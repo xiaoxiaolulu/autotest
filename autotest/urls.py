@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from apitest import views
+from apitest import views as apiviews
+from product import views as proviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', views.login),
-    path('home/', views.home),
-    path('logout/', views.logout)
+    path('login/', apiviews.login),
+    path('home/', apiviews.home),
+    path('logout/', apiviews.logout),
+    path('product_manage/', proviews.product_manage)
 ]

@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apitest',
-    'product'
-    'bootstraps4'
+    'product',
+    'bootstrap4'
 ]
 
 MIDDLEWARE = [
