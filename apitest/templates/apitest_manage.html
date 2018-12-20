@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动化测试平台</title>
+</head>
+<body>
+<!--导航栏-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">自动化测试平台</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">流程接口测试</a></li>
+                <li><a href="#">流程接口测试步骤</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">{{ user }}</a></li>
+                <li><a href="/logout/">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--流程接口测试列表-->
+<div class="row" style="padding-top: 20px">
+    <div class="col-md-11">
+        <table class="table table-striped">
+            <thread>
+                <tr>
+                    <th>ID</th>
+                    <th>产品</th>
+                    <th>流程接口测试用例名称</th>
+                    <th>流程接口描述</th>
+                    <th>测试负责人</th>
+                    <th>测试结果</th>
+                    <th>测试用例步骤</th>
+                </tr>
+            </thread>
+            <tbody>
+            {% for apitest in apitests %}
+                <tr>
+                    <td>{{ apitest.id }}</td>
+                    <td>{{ apitest.Product.productname }}</td>
+                    <td>{{ apitest.apitestname }}</td>
+                    <td>{{ apitest.apitestdesc }}</td>
+                    <td>{{ apitest.apitester }}</td>
+                    <td>{{ apitest.apitestresult }}</td>
+                    <td>{{ apitest.Apistep.apiteststep }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
